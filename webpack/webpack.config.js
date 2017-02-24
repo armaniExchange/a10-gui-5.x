@@ -14,7 +14,6 @@ base.entry = {
     'index'
   ],
   vendor: [
-    // 'bootstrap-loader',
     'react', 'react-dom'
   ]
 };
@@ -94,7 +93,7 @@ base.devServer = {
   },
   proxy: {
     '/axapi/*': {
-      target: 'https://' + ( process.env.AXAPI_HOST || '192.168.105.96' ),
+      target: 'https://' + ( process.env.AXAPI_HOST || '192.168.99.58' ),
       secure: false,
       rewrite: function(req, res) { // eslint-disable-line
         console.log(req, 'this is request');
