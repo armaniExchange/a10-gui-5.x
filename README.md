@@ -4,6 +4,16 @@
 ## TODO:
 1. Follow airbnb as eslint rules
 
+## Before Start
+
+git clone `a10-schemas`, `a10-widget` and `a10-widget-lib` to the same level of this project
+
+then run
+
+```
+npm run install-a10
+```
+
 ## DEV START COMMAND
 Startup and switch AXAPI HOST:
 AXAPI_HOST=192.168.105.196 npm start

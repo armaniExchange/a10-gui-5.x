@@ -14,7 +14,8 @@
     "test": "better-npm-run test",
     "test:watch": "better-npm-run test:watch",
     "uigen": "better-npm-run uigen",
-    "uigen-test": "better-npm-run uigen-test"
+    "uigen-test": "better-npm-run uigen-test",
+    "install-a10": "npm install ../a10-schemas ../a10-widget ../a10-widget-lib"
   },
   "license": "MIT",
   "betterScripts": {
@@ -121,6 +122,7 @@
     "webpack-node-externals": "^1.5.4"
   },
   "dependencies": {
+    "a10-schemas": "https://github.com/armaniExchange/a10-schemas.git",
     "a10-widget": "git+https://github.com/armaniExchange/a10-widget.git",
     "a10-widget-lib": "git+https://github.com/armaniExchange/a10-widget-lib.git",
     "cheerio": "0.22.0",
