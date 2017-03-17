@@ -2,9 +2,8 @@
 import _ from 'lodash';
 
 import ConvertField from './convertField';
-import ConvertForm from './ConvertForm';
-import ConvertSubmitButton from './ConvertSubmitButton';
-
+import ConvertForm from './convertForm';
+import ConvertSubmitButton from './convertSubmitButton';
 
 class SchemaAnalysis {
 
