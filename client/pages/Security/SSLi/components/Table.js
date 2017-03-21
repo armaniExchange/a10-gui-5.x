@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { cloneDeep } from 'lodash';
-import VirtualServerForm from 'pages/ADC/VirtualServer/components/Form';
+import VirtualServerForm from 'pages/ADC/VirtualServer/components/VirtualServerForm';
 import slbVirtualServerSchema from 'slb-virtual-server.json';
 // import { widgetWrapper } from 'helpers/widgetWrapper';
 import { Schema } from 'a10-widget-lib';

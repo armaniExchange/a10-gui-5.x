@@ -1,12 +1,11 @@
 import { combineReducers } from 'redux-immutable';
-import app from './app';
-// import routerReducer from './rootReducer';
-// import { reducer as form } from 'redux-form/immutable';
 
-// import axapi from './axapi';
+import { createReducer } from '../../helpers/utils';
+import { reducers } from './app';
 
-const rootReducers = combineReducers({
-  app
+export default combineReducers({
+  notification: createReducer('notification', reducers.notification, []),
+  globalVar: createReducer('globalVar', reducers.globalVar, {
+    authToken: sessionStorage.getItem('token')
+  }),
 });
-
-export default rootReducers;

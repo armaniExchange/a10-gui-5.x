@@ -1,5 +1,5 @@
 import React from 'react';
-import { Match } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
 import { set } from 'lodash';
 
 // import { TransitionMotion, spring } from 'react-motion';
@@ -8,7 +8,7 @@ import { set } from 'lodash';
 
 export const MatchWithFade = ({ component:Component, paths, ...rest }) => {
   return (
-    <Match {...rest} render={(props) => (
+    <Route exact strict {...rest} render={(props) => (
       (<Component {...props} paths={paths} />)
     )} />
   );
@@ -84,7 +84,7 @@ export default class RouterBase extends React.Component {
         {
           Object.entries(this.pages).map(([ pageName, PageComponent ]) => {
             const paths = this.buildPath(pageName);
-            const path = '/' + paths.join('/');
+            const path = paths.join('/');
             set(RouterBase.paths, paths, path);
             let _PageComponent = PageComponent;
             if (PageComponent.menuPath) {
@@ -93,7 +93,7 @@ export default class RouterBase extends React.Component {
               _PageComponent = PageComponent.component;
             }
 
-            return <MatchWithFade key={path} pattern={path} component={_PageComponent} paths={this.paths} />;
+            return <MatchWithFade key={path} path={path} component={_PageComponent} paths={this.paths} />;
           })
         }
       </div>

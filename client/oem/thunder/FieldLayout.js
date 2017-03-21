@@ -12,7 +12,8 @@ import {
 
 class A10FieldLayout extends Component {
   render() {
-    let { label, schema, description, layout, required, instanceData: { errorMsg }, children } = this.props;
+    let { label, schema, description, layout, required, children } = this.props;
+    let errorMsg = null;
     let status = {};
 
     if (errorMsg) {

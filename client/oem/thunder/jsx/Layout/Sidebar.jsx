@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import pubsub from 'pubsub-js';
 import { Collapse } from 'react-bootstrap';
 import SidebarRun from './Sidebar.run';

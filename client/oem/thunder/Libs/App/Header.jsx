@@ -2,7 +2,7 @@ import React from 'react';
 import pubsub from 'pubsub-js';
 import HeaderRun from './Header.run';
 import { NavDropdown, MenuItem } from 'react-bootstrap';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import logo from '../../img/logo.png';
 import logoLarger from '../../img/logo-larger.png';
 

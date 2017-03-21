@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router/es6';
+import { Link } from 'react-router-dom';
 import './toolbar.scss';
 
 export default () => (

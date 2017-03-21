@@ -2,7 +2,7 @@ import React from 'react';
 import pubsub from 'pubsub-js';
 import HeaderRun from './Header.run'
 import { NavDropdown, MenuItem, NavItem } from 'react-bootstrap';
-import { Router, Route, Link, History } from 'react-router';
+import { Router, Route, Link, History } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 
 class HeaderHorizontal extends React.Component {

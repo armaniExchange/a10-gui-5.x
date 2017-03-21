@@ -5,18 +5,10 @@ import configApp from 'configs/app';
 const OEM = configApp.OEM;
 const StandardPageLayout = require('oem/' + OEM + '/PageLayout').default;
 
-import { widgetWrapper } from 'a10-widget';
-
-class VirtualServerListPage extends React.Component {
-
-  render() {
-
-    return (
-      <StandardPageLayout title="Virtual Servers" description="Virtual Servers List Page">
-        <VirtualServerTable />
-      </StandardPageLayout>
-    );
-  }
+export default function VirtualServerList(props) {
+  return (
+    <StandardPageLayout title="Virtual Servers" description="Virtual Servers List Page">
+      <VirtualServerTable {...props} />
+    </StandardPageLayout>
+  )
 }
-
-export default widgetWrapper()(VirtualServerListPage);

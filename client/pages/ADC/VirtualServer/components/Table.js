@@ -1,26 +1,28 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import React, { PropTypes } from 'react';
+import { Col, Row, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 // import { TableHeaderColumn } from 'react-bootstrap-table';  // in ECMAScript 6
 import { cloneDeep } from 'lodash';
 
-// import A10Table, { A10TableColumn } from 'components/List/A10Table';
-
-// import AppManager from 'helpers/AppManager';
-// import BaseTable from 'pages/BaseTable';
-// import Link from 'react-router/Link';
-// import A10Button from 'components/Field/A10Button';
-import VirtualServerForm from 'pages/ADC/VirtualServer/components/Form';
+import VirtualServerForm from 'pages/ADC/VirtualServer/components/VirtualServerForm';
 import slbVirtualServerSchema from 'slb-virtual-server.json';
-// import { widgetWrapper } from 'helpers/widgetWrapper';
 import { Schema } from 'a10-widget-lib';
 
-import { A10Button, A10Table, A10TableColumn, widgetWrapper } from 'a10-widget';
+import { A10Table, A10TableColumn } from 'a10-widget';
 
 class VirtualServerTable extends React.Component {
-  static displayName = 'VirtualServerTable'
+
+  static url = '/axapi/v3/slb/virtual-server/';
+
+  static displayName = 'VirtualServerTable';
+
+  static contextTypes = {
+    apiClient: PropTypes.object.isRequired,
+    appRouteRule: PropTypes.object.isRequired
+  }
 
   render() {
-
+    const { apiClient, appRouteRule } = this.context;
     const formatStat = (cell) => {
       return cell && cell.toUpperCase();
     };
@@ -41,18 +43,18 @@ class VirtualServerTable extends React.Component {
       }
     };
 
-
     const actions = {
       create: Object.assign({}, popupInfo)
     };
 
     const formatName = (cell) => {
-      let pop = cloneDeep(popupInfo);
-      pop.endpoint = Schema.getAxapiURL(slbVirtualServerSchema.axapi, { name: cell });
-      pop.edit = true;
-      pop.modalProps.title = 'Edit Virtual Server';
+      // let pop = cloneDeep(popupInfo);
+      // pop.endpoint = Schema.getAxapiURL(slbVirtualServerSchema.axapi, { name: cell });
+      // pop.edit = true;
+      // pop.modalProps.title = 'Edit Virtual Server';
       // console.log(cell, '..........');
-      return (<A10Button popup={ pop } componentClass="a" >{cell}</A10Button>);
+      // FIXME
+      return (<Link to={`${appRouteRule.AdcVirtualServerEdit}?name=${cell}`}>{cell}</Link>);
     };
 
     const formatIp = (cell, row) => row['netmask'] ? `${cell} ${row['netmask']}` : cell;
@@ -60,11 +62,12 @@ class VirtualServerTable extends React.Component {
     return (
       <Row>
         <Col xs={12}>
-          <A10Table actions={actions} schema={slbVirtualServerSchema} pageMode responsive striped hover newLast loadOnInitial >
+          <A10Table page responsive striped hover newLast loadOnInitial action={VirtualServerTable.url}
+            dataKey="virtual-server-list">
             <A10TableColumn dataField="name" checkbox style={{ width:'20px' }}  />
-            <A10TableColumn dataField="enable-disable-action" style={{ width:'80px' }} dataFormat={formatStat} >Enable</A10TableColumn>
-            <A10TableColumn dataField="name" style={{ width:'30%' }} dataFormat={formatName}>Name</A10TableColumn>
-            <A10TableColumn dataField="ip-address" dataFormat={formatIp}>IP Address</A10TableColumn>
+            <A10TableColumn dataField="name" style={{ width:'30%' }} render={formatName}>Name</A10TableColumn>
+            <A10TableColumn dataField="ip-address" render={formatIp}>IP Address</A10TableColumn>
+            <A10TableColumn dataField="enable-disable-action" render={formatStat} >Enable</A10TableColumn>
           </A10Table>
         </Col>
       </Row>
@@ -72,8 +75,4 @@ class VirtualServerTable extends React.Component {
   }
 }
 
-// export default AppManager({
-//   page: 'virtual-server-list'
-// })(VirtualServerTable);
-
-export default widgetWrapper()(VirtualServerTable);
+export default VirtualServerTable;

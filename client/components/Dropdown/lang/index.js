@@ -36,7 +36,9 @@ class LangDropdown extends Component {
   }
 
   render() {
-    const currentLang = this.props.getData('lang') || 'en';
+    // FIXME
+    // this.props.getData('lang')
+    const currentLang = 'en';
     return (
       <DropdownButton title={this.renderLangItem(currentLang)} 
         className="lang-dropdown"

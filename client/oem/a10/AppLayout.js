@@ -6,7 +6,7 @@ import Loading from 'react-loading';
 import Menu from 'components/Menu';
 import './scss/AppLayout.scss';
 
-import LoginForm from 'pages/Auth/components/Form';
+import LoginForm from 'pages/Common/Auth/components/Form';
 import { LAST_PAGE_KEY } from 'configs/appKeys';
 import NotificationSystem from 'react-notification-system';
 import { HIDE_COMPONENT_MODAL } from 'configs/messages';

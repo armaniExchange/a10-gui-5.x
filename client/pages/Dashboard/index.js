@@ -1,20 +1,21 @@
-// import React, { Component } from 'react';
-import DashboardRouter from './Router';
-// import ViewManager from 'helpers/ViewManager';
-// import LicenseManager from 'helpers/ViewManagerPlugins/LicenseManager';
-import ModuleBase from 'helpers/ModuleBase';
+import asyncComponent from 'helpers/asyncComponent';
 
+const SLBDashboard = asyncComponent(() =>
+  System.import('./components/SLB').then(module => module.default)
+);
 
-class DashboardModule extends ModuleBase {
-  path = 'dashboard'
-
-  license = {
+export default {
+  path: 'dashboard',
+  pages: {
+    slb: {
+      component: SLBDashboard,
+      menuPath: [ 'Dashboard', 'SLB' ],
+      index: true
+    }
+  },
+  license: {
     'source2-module':'WEBROOT',
     'source2-expiry':'N/A',
     'source2-notes':'Requires an additional Webroot license.'
-  }  
-
-  routers = [ DashboardRouter ]
-}
-
-export default DashboardModule;
+  }
+};

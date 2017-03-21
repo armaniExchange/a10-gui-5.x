@@ -1,20 +1,15 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import asyncComponent from 'helpers/asyncComponent';
 
-import ApiTesterForm from './components/Form';
-// import PageBase from 'helpers/PageBase';
-// import { widgetWrapper } from 'a10-widget';
+const ApiTesterRouter = asyncComponent(() =>
+  System.import('./index').then(module => module.default)
+);
 
-export default class ApiTester extends React.Component {
-  render() {
-    // const { handleSubmit,  ...rest } = this.props; // eslint-disable-line
-
-    return (
-      <Row>
-        <Col xs={12}>
-          <ApiTesterForm />
-        </Col>
-      </Row>
-    );
+export default {
+  path: 'api',
+  pages: {
+    apitester: {
+      component: ApiTesterRouter,
+      menuPath: [ 'Dev Tools', 'AXAPI Debugger' ]
+    }
   }
-}
+};

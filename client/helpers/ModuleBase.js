@@ -28,7 +28,6 @@ class ModuleBase extends Component {
   }
 
   render() {
-
     return (
       this.view.visible() ?
         <div className="module">

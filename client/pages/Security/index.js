@@ -1,21 +1,13 @@
-// import React, { Component } from 'react';
-import ModuleBase from 'helpers/ModuleBase';
+import SSLi from './SSLi';
 
-import SSLiRouter from './SSLi/Router';
-
-class SSLiModule extends ModuleBase {
-  path = 'security'
-
-  license = {
+export default {
+  path: 'security',
+  pages: {
+    SSLi
+  },
+  license: {
     'source2-module':'SLB',
     'source2-expiry':'None',
     'source2-notes':''
   }
-
-  routers = [
-    SSLiRouter
-  ]
-
-}
-
-export default SSLiModule;
+};

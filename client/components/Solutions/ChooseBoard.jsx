@@ -14,7 +14,7 @@ class ChooseBoard extends Component {
   renderSolution = (data) => {
     const colors = [ 'primary', 'warning', 'default', 'success', 'info', 'danger' ];
     return data.map((solution, index) => (
-      <button type="button" className={`btn btn-${colors[index % 7]} btn-xs`}>{solution.name}</button>
+      <button type="button" key={index} className={`btn btn-${colors[index % 7]} btn-xs`}>{solution.name}</button>
     ));
   }
 
