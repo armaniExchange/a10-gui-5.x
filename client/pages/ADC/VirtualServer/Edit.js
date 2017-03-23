@@ -6,7 +6,7 @@ const StandardPageLayout = require('oem/' + OEM + '/PageLayout').default;
 
 import VirtualServerForm from './components/VirtualServerForm';
 
-import { widgetWrapper } from 'a10-widget';
+// import { widgetWrapper } from 'a10-widget';
 
 class VirtualServerEditor extends React.Component {
 
@@ -25,12 +25,12 @@ class VirtualServerEditor extends React.Component {
     const {
       app: { setNotification }
     } = this.props.actions;
+    const { router, appRouteRule } = this.context;
     setNotification('success', 'Success', 'Edit successful');
-    // this.context.router.history.push();
+    router.history.push(appRouteRule.AdcVirtualServerList);
   };
 
   render() {
-    console.log(this.context);
     return (
       <StandardPageLayout title="Virtual Server Edit" description="Virtual Server Is A Main Object For SLB">
         <VirtualServerForm onSuccess={this.onSuccess} />
@@ -39,4 +39,4 @@ class VirtualServerEditor extends React.Component {
   }
 }
 
-export default widgetWrapper()(VirtualServerEditor);
+export default VirtualServerEditor;

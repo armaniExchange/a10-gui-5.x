@@ -1,15 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import { Col, Row, Panel, Radio, Checkbox, FormControl } from 'react-bootstrap';
+import { Col, Row, Panel } from 'react-bootstrap';
 
 import { A10Form, A10Field, A10MultiField, A10DynamicSelect,
-         A10FormControl, A10Radio, A10Checkbox, A10SubmitButtons } from 'a10-widget';
+         A10FormControl, A10Radio, A10Checkbox, A10SubmitButtons, querystring2obj } from 'a10-widget';
 import { required } from 'a10-widget-lib';
 // import { isInt } from 'helpers/validations';
 
 import VirtualPortForm from 'pages/ADC/VirtualPort/components/Form';
 import TemplateVirtualServerForm from 'pages/ADC/Templates/VirtualServer/components/Form';
-
-// const makeError = (status=true, errMsg='') => ( status ? '' : errMsg );
 
 // const ipv4 = (value) => {
 //   const reg = /^(?:(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$/;
@@ -22,14 +20,24 @@ class VirtualServerForm extends Component {
 
   static url = '/axapi/v3/slb/virtual-server/';
 
+  static contextTypes = {
+    router: PropTypes.object.isRequired
+  };
+
   static propTypes = {
     onSuccess: PropTypes.func,
     onError: PropTypes.func
   };
 
   render() {
+    const {
+      router: {
+        route: { location }
+      }
+    } = this.context;
+    const params = querystring2obj(location.search);
     return (
-      <A10Form action={this.url} method="post" horizontal
+      <A10Form action={VirtualServerForm.url} paimaryId={params.name} method="post" horizontal
         onSuccess={this.props.onSuccess}
         onError={this.props.onError}>
         <div>

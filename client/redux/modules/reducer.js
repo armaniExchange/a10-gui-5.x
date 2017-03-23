@@ -7,5 +7,5 @@ export default combineReducers({
   notification: createReducer('notification', reducers.notification, []),
   globalVar: createReducer('globalVar', reducers.globalVar, {
     authToken: sessionStorage.getItem('token')
-  }),
+  })
 });

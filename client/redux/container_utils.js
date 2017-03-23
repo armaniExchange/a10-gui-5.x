@@ -11,7 +11,7 @@ export function mapStateToProps(state) {
 export function mapDispatchToProps(dispatch) {
   const result = { actions: {} };
   for (const moduleKey in ActionCreators) {
-    result.actions[moduleKey] = bindActionCreators(ActionCreators[moduleKey], dispatch)
+    result.actions[moduleKey] = bindActionCreators(ActionCreators[moduleKey], dispatch);
   }
   return result;
 }

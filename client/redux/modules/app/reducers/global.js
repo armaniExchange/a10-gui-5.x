@@ -14,5 +14,5 @@ const globalVarReducer = {
       [ key ]: value
     };
   }
-}
+};
 export default globalVarReducer;

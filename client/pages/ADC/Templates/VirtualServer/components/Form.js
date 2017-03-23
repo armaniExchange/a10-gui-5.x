@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import { Checkbox, Radio, Col, Row, Panel } from 'react-bootstrap';
+import { Col, Row, Panel } from 'react-bootstrap';
 
 import { A10Field, A10Form, A10FormControl, A10Checkbox, A10SubmitButtons, A10Radio } from 'a10-widget';
 
 class TemplateVirtualServerForm extends Component {
 
-  static url = '/axapi/v3/slb/template/virtual-server/';
+  static url = '/axapi/v3/slb/template/virtual-server';
 
   static displayName = 'TemplateVirtualServerForm';
 

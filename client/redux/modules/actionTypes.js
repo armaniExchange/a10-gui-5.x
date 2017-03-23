@@ -33,5 +33,5 @@
 // export const MODEL_HOLD_DATA = 'page/api/MODEL_HOLD_DATA';
 // export const MODEL_HOLD_META = 'page/api/MODEL_HOLD_META';
 
-export const SET_NOTIFICATION = "notification";
-export const SET_GLOBAL_VAR = "global/set";
+export const SET_NOTIFICATION = 'notification';
+export const SET_GLOBAL_VAR = 'global/set';

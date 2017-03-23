@@ -37,7 +37,7 @@ class Welcome extends Component {
     const { appRouteRule } = this.context;
 
     if (!this.isFirstLogin) {
-      return <Redirect to={appRouteRule.DashboardSlb} />
+      return <Redirect to={appRouteRule.DashboardSlb} />;
     }
 
     return (

@@ -7,7 +7,7 @@ const StandardPageLayout = require('oem/' + OEM + '/PageLayout').default;
 import VirtualPortForm from './components/Form';
 // import PageBase from 'helpers/PageBase';
 // import pageWrapper from 'helpers/pageWrapper';
-import { widgetWrapper } from 'a10-widget';
+// import { widgetWrapper } from 'a10-widget';
 
 class VirtualPortEdit extends Component {
 

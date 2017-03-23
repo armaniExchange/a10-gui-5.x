@@ -10,5 +10,5 @@ export default function VirtualServerList(props) {
     <StandardPageLayout title="Virtual Servers" description="Virtual Servers List Page">
       <VirtualServerTable {...props} />
     </StandardPageLayout>
-  )
+  );
 }

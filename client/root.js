@@ -9,10 +9,10 @@ import reducer from './redux/modules/reducer';
 import Config from './configs/app';
 import { PageNotFound } from './pages/StatusPage';
 import A10Modules from './pages';
+import '../../a10-widget/dist/style.css';
 
 const OEM = Config.OEM;
 const AppLayout = require('./oem/' + OEM + '/AppLayout').default;
-const EmptyLayout = require('./oem/' + OEM + '/EmptyLayout').default;
 const MenuLayout = require('./oem/' + OEM + '/MenuLayout').default;
 
 class Root extends Component {
@@ -38,7 +38,7 @@ class Root extends Component {
           const routeName = pathSegs.reduce((prev, seg) => {
             if (seg.length === 0) return prev;
             for (let dashPos = seg.indexOf('-'); dashPos != -1;  dashPos = seg.indexOf('-')) {
-              seg = seg.slice(0, dashPos) + seg.slice(dashPos+1, dashPos+2).toUpperCase() + seg.slice(dashPos+2)
+              seg = seg.slice(0, dashPos) + seg.slice(dashPos+1, dashPos+2).toUpperCase() + seg.slice(dashPos+2);
             }
             return prev + seg.charAt(0).toUpperCase() + seg.slice(1);
           }, '');
@@ -60,7 +60,7 @@ class Root extends Component {
   }
 
   getModulePathAndMenu(modules, routes={}, menus=[], pathPrefix=[]) {
-    const { name, path, pages, license } = modules;
+    const { path, pages } = modules;
     const keys = Object.keys(pages);
     for (let i = 0; i < keys.length; i++) {
       const key = keys[i];
@@ -94,11 +94,11 @@ class Root extends Component {
   getRoutes(modules, pathPrefix=[]) {
     let routes = [];
     let indexRoute;
-    const { name, path, pages, license } = modules;
+    const { path, pages } = modules;
     const keys = Object.keys(pages);
     for (let i = 0; i < keys.length; i++) {
       const key = keys[i];
-      const { component: Component, menuPath, index } = pages[key];
+      const { component: Component, index } = pages[key];
       const newPath = [ ...pathPrefix, path ];
       if (Component) {
         newPath.push(key);
@@ -127,7 +127,7 @@ class Root extends Component {
 
   componentDidMount() {
     const { history } = this.refs.router;
-    history.listen(location => this.runRouteMiddleware());
+    history.listen(() => this.runRouteMiddleware());
     this.runRouteMiddleware();
   }
 
@@ -136,7 +136,7 @@ class Root extends Component {
     return authToken;
   }
 
-  authFailHandle = (key, name) => {
+  authFailHandle = () => {
     this.refs.router.history.push(this.appRouteRule.login);
     this.store.dispatch(setGlobalVar('authToken', null));
   }
@@ -155,7 +155,7 @@ class Root extends Component {
             getAuthToken={this.getAuthToken}>
             <Switch>
               {commonRoutes.routes}
-              <Route path="/" render={({ location }) => {
+              <Route path="/" render={() => {
                 return (
                   <AppLayout>
                     <MenuLayout menus={this.state.menus} />

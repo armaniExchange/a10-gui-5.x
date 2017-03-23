@@ -55,7 +55,7 @@ class MenuLayout extends React.Component {
   }
 
   toggleItemCollapseByUrl = (url, menus, prefix='root') => {
-    Object.keys(menus).map((menuKey, index) => {
+    Object.keys(menus).map(menuKey => {
       const item = menus[menuKey];
       const currentPath = `${prefix}@${menuKey}`;
       if (typeof item === 'string') {
@@ -111,7 +111,7 @@ class MenuLayout extends React.Component {
         );
       }
     });
-  };
+  }
 
   componentDidMount() {
     SidebarRun();

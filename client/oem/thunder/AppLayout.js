@@ -15,9 +15,9 @@ import 'style-loader!css-loader!less-loader!font-awesome-webpack/font-awesome-st
 
 import { mapStateToProps, mapDispatchToProps } from '../../redux/container_utils';
 import LoginForm from 'pages/Common/Auth/components/Form';
-import { LAST_PAGE_KEY } from 'configs/appKeys';
+// import { LAST_PAGE_KEY } from 'configs/appKeys';
 import NotificationSystem from 'react-notification-system';
-import { HIDE_COMPONENT_MODAL } from 'configs/messages';
+// import { HIDE_COMPONENT_MODAL } from 'configs/messages';
 import configApp from 'configs/app';
 
 const OEM = configApp.OEM;

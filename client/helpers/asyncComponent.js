@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import CoreManager from 'helpers/CoreManager';
+// import CoreManager from 'helpers/CoreManager';
 import configApp from 'configs/app';
 
 import { mapStateToProps, mapDispatchToProps } from '../redux/container_utils';
 const OEM = configApp.OEM;
-const AppLayout = require('../oem/' + OEM + '/AppLayout').default;
+// const AppLayout = require('../oem/' + OEM + '/AppLayout').default;
 const EmptyLayout = require('../oem/' + OEM + '/EmptyLayout').default;
 
 export default function asyncComponent(getComponent, Layout=null) {
@@ -32,7 +32,7 @@ export default function asyncComponent(getComponent, Layout=null) {
           Layout = EmptyLayout;
         }
 
-        const Container = connect(mapStateToProps, mapDispatchToProps)(Component)
+        const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
         return (
           <Layout>
             <Container />

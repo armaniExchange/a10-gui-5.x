@@ -17,5 +17,5 @@ const notificationReducer = {
     }
     return state;
   }
-}
+};
 export default notificationReducer;

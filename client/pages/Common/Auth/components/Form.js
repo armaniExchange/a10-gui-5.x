@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const {
       actions: {
-        app: { setNotification, setGlobalVar }
+        app: { setGlobalVar }
       }
     } = this.props;
     this.context.apiClient.post('/axapi/v3/auth', data).then(res => {
