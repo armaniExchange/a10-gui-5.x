@@ -18,11 +18,11 @@ class VirtualServerTable extends React.Component {
 
   static contextTypes = {
     apiClient: PropTypes.object.isRequired,
-    appRouteRule: PropTypes.object.isRequired
+    routeAlias: PropTypes.object.isRequired
   };
 
   render() {
-    const { appRouteRule } = this.context;
+    const { routeAlias } = this.context;
     const formatStat = (cell) => {
       return cell && cell.toUpperCase();
     };
@@ -50,7 +50,7 @@ class VirtualServerTable extends React.Component {
       // pop.modalProps.title = 'Edit Virtual Server';
       // console.log(cell, '..........');
       // FIXME
-      return (<Link to={`${appRouteRule.AdcVirtualServerEdit}?name=${cell}`}>{cell}</Link>);
+      return (<Link to={`${routeAlias.AdcVirtualServerEdit}?name=${cell}`}>{cell}</Link>);
     };
 
     const formatIp = (cell, row) => row['netmask'] ? `${cell} ${row['netmask']}` : cell;

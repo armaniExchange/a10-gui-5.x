@@ -6,6 +6,8 @@ import { reducers } from './app';
 export default combineReducers({
   notification: createReducer('notification', reducers.notification, []),
   globalVar: createReducer('globalVar', reducers.globalVar, {
-    authToken: sessionStorage.getItem('token')
+    authToken: sessionStorage.getItem('token'),
+    licenses: { adc: false },
+    isVCSMaster: false
   })
 });

@@ -14,7 +14,7 @@ class VirtualServerEditor extends React.Component {
 
   static contextTypes = {
     router: PropTypes.object.isRequired,
-    appRouteRule: PropTypes.object.isRequired
+    routeAlias: PropTypes.object.isRequired
   };
 
   static propTypes = {
@@ -25,9 +25,9 @@ class VirtualServerEditor extends React.Component {
     const {
       app: { setNotification }
     } = this.props.actions;
-    const { router, appRouteRule } = this.context;
+    const { router, routeAlias } = this.context;
     setNotification('success', 'Success', 'Edit successful');
-    router.history.push(appRouteRule.AdcVirtualServerList);
+    router.history.push(routeAlias.AdcVirtualServerList);
   };
 
   render() {

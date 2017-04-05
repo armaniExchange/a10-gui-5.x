@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 // import CoreManager from 'helpers/CoreManager';
 import configApp from 'configs/app';
-
+// import controlWidget from './WidgetController';
 import { mapStateToProps, mapDispatchToProps } from '../redux/container_utils';
+
 const OEM = configApp.OEM;
 // const AppLayout = require('../oem/' + OEM + '/AppLayout').default;
 const EmptyLayout = require('../oem/' + OEM + '/EmptyLayout').default;
 
 export default function asyncComponent(getComponent, Layout=null) {
 
-  class AsyncComponent extends Component {
+  class AsyncComponent extends React.Component {
     static Component = null;
     state = { Component: AsyncComponent.Component };
 
@@ -38,6 +39,7 @@ export default function asyncComponent(getComponent, Layout=null) {
             <Container />
           </Layout>
         );
+        // return controlWidget(configApp.WIDGET_MIDDLEWARE)(Layout, Component);
 
         // const LayoutWrapper = CoreManager({
         //   page: this.props.location.pathname,

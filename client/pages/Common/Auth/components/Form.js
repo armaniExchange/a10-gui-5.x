@@ -9,7 +9,7 @@ class LoginForm extends React.Component {
   static contextTypes = {
     router: PropTypes.object.isRequired,
     apiClient: PropTypes.object.isRequired,
-    appRouteRule: PropTypes.object.isRequired
+    routeAlias: PropTypes.object.isRequired
   };
 
   isFirstLogin() {
@@ -31,9 +31,9 @@ class LoginForm extends React.Component {
       }
     } = this.props;
     this.context.apiClient.post('/axapi/v3/auth', data).then(res => {
-      const { appRouteRule, router } = this.context;
+      const { routeAlias, router } = this.context;
       setGlobalVar('authToken', res.authresponse.signature);
-      router.history.push(appRouteRule.CommonWelcomeIndex);
+      router.history.push(routeAlias.CommonWelcomeIndex);
     });
   };
 

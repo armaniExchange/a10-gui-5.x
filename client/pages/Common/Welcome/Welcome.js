@@ -17,7 +17,7 @@ class Welcome extends Component {
 
   static contextTypes = {
     router: PropTypes.object.isRequired,
-    appRouteRule: PropTypes.object.isRequired
+    routeAlias: PropTypes.object.isRequired
   };
 
   constructor(props) {
@@ -34,10 +34,10 @@ class Welcome extends Component {
   }
 
   render() {
-    const { appRouteRule } = this.context;
+    const { routeAlias } = this.context;
 
     if (!this.isFirstLogin) {
-      return <Redirect to={appRouteRule.DashboardSlb} />;
+      return <Redirect to={routeAlias.DashboardSlb} />;
     }
 
     return (
@@ -71,7 +71,7 @@ class Welcome extends Component {
         </main>
 
         <div className="toolbar">
-          <Button href={appRouteRule.DashboardSlb}>Skip</Button>
+          <Button href={routeAlias.DashboardSlb}>Skip</Button>
         </div>
       </div>
     );

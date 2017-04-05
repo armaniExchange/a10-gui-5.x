@@ -10,7 +10,7 @@ class LoginPage extends React.Component {
   static displayName = 'loginPage';
 
   render() {
-    // console.log(this);
+    console.log(this);
     return (
       <LoginForm {...this.props} />
     );

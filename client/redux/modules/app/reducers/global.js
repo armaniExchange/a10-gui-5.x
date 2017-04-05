@@ -6,7 +6,8 @@ const globalVarReducer = {
     const { key, value } = payload;
 
     if (key === 'authToken') {
-      sessionStorage.setItem('token', value);
+      if (value) sessionStorage.setItem('token', value);
+      else sessionStorage.removeItem('token');
     }
 
     return {

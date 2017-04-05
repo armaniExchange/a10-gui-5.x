@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-// const path = require('path');
+const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // const CONTENT_BASE = '../client';
@@ -28,7 +28,16 @@ module.exports = {
           {
             loader: 'babel-loader',
             query: {
-              cacheDirectory: true
+              cacheDirectory: true,
+              plugins: [
+                ["react-transform", {
+                  "transforms": [
+                    {
+                      "transform": path.resolve(__dirname, "../client/helpers/widgetTransform.js")
+                    }
+                  ]
+                }]
+              ]
             }
           },
           {
@@ -55,7 +64,9 @@ module.exports = {
       'node_modules'
     ]
   },
-
+  node: {
+    fs: "empty"
+  },
   plugins: [
     new webpack.DefinePlugin({
       __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production')

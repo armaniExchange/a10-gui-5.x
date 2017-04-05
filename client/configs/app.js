@@ -1,4 +1,7 @@
 import { auth } from '../middlewares/routes';
+import { VCS } from '../middlewares/widgets';
+// import { moduletest } from '../middlewares/modules';
+// import { partitionCheck } from '../middlewares/pages';
 
 var OEM = 'thunder';
 // var LAYOUT = OEM;
@@ -10,7 +13,16 @@ var APP_CONFIGS =  {
   THEME: 'default',
   MODULE_NAME: '930',
   COMPONENT_PAGE_SIZE: 15,
-  ROUTE_MIDDLEWARES: [
+  MODULE_MIDDLEWARE: [
+    // moduletest
+  ],
+  PAGE_MIDDLEWARE: [
+    // partitionCheck
+  ],
+  WIDGET_MIDDLEWARE: [
+    VCS
+  ],
+  ROUTE_MIDDLEWARE: [
     auth
   ]
 };

@@ -13,7 +13,7 @@ import SidebarRun from './jsx/Layout/Sidebar.run';
 class MenuLayout extends React.Component {
 
   static propTypes = {
-    menus: PropTypes.array.isRequired
+    menus: PropTypes.object.isRequired
   };
 
   static contextTypes = {
@@ -24,8 +24,7 @@ class MenuLayout extends React.Component {
     super(props, context);
     this.state = {
       userBlockCollapse: false,
-      collapse: [],
-      menus: this.initMenuStructure(props.menus)
+      collapse: []
     };
     this.icons = {
       'Dev': 'icon-wrench',
@@ -35,31 +34,34 @@ class MenuLayout extends React.Component {
     };
   }
 
-  initMenuStructure(menus) {
-    const result = {};
-    for (let i = 0; i < menus.length; i++) {
-      const { menuPath, path } = menus[i];
-      let currentRef = result;
-      for (let j = 0; j < menuPath.length; j++) {
-        if (j === menuPath.length - 1) {
-          currentRef[menuPath[j]] = path;
-        } else {
-          if (!currentRef[menuPath[j]]) {
-            currentRef[menuPath[j]] = {};
-          }
-          currentRef = currentRef[menuPath[j]];
-        }
-      }
-    }
-    return result;
-  }
+  // initMenuStructure(menus) {
+  //   const result = {};
+  //   for (let i = 0; i < menus.length; i++) {
+  //     const { menuPath, path } = menus[i];
+  //     let currentRef = result;
+  //     for (let j = 0; j < menuPath.length; j++) {
+  //       if (j === menuPath.length - 1) {
+  //         currentRef[menuPath[j]] = path;
+  //       } else {
+  //         if (!currentRef[menuPath[j]]) {
+  //           currentRef[menuPath[j]] = {};
+  //         }
+  //         currentRef = currentRef[menuPath[j]];
+  //       }
+  //     }
+  //   }
+  //   return result;
+  // }
 
   toggleItemCollapseByUrl = (url, menus, prefix='root') => {
     Object.keys(menus).map(menuKey => {
       const item = menus[menuKey];
       const currentPath = `${prefix}@${menuKey}`;
       if (typeof item === 'string') {
-        if (item === url) this.toggleItemCollapse(currentPath);
+        if (item === url) {
+          this.toggleItemCollapse(currentPath);
+          return;
+        }
       } else {
         this.toggleItemCollapseByUrl(url, item, currentPath);
       }
@@ -122,7 +124,7 @@ class MenuLayout extends React.Component {
         }
       }
     } = this.context;
-    this.toggleItemCollapseByUrl(pathname, this.state.menus);
+    this.toggleItemCollapseByUrl(pathname, this.props.menus);
   }
 
   render() {
@@ -134,7 +136,7 @@ class MenuLayout extends React.Component {
                       <li className="nav-heading ">
                           <span data-localize="sidebar.heading.HEADER">Main Navigation</span>
                       </li>
-                      {this.renderMenuItems(this.state.menus)}
+                      {this.renderMenuItems(this.props.menus)}
                   </ul>
               </nav>
           </div>
