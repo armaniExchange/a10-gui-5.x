@@ -16,7 +16,7 @@ class TemplateVirtualServerForm extends Component {
   render() {
     const { handleSubmit,  onSuccess, onClose, ...rest } = this.props; // eslint-disable-line
     return (
-      <A10Form action={TemplateVirtualServerForm.url} method="post" horizontal onSuccess={onSuccess}>
+      <A10Form action={TemplateVirtualServerForm.url} horizontal onSuccess={onSuccess}>
         <div>
           <Row>
             <Col xs={12}>

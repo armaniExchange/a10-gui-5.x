@@ -58,6 +58,7 @@ class Root extends Component {
       if (!method(this.store.getState(), history, this.routeAlias)) return;
     }
   };
+
   getAuthToken = () => {
     const { authToken } = this.store.getState().get('globalVar');
     return authToken;

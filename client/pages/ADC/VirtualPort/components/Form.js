@@ -26,7 +26,6 @@ class VirtualPort extends React.Component {
       formProps = {
         onSuccess: onSuccess,
         action: VirtualPort.url,
-        method: 'post',
         params: { name }
       };
     }

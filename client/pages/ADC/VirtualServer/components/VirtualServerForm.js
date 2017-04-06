@@ -37,7 +37,7 @@ class VirtualServerForm extends Component {
     } = this.context;
     const params = querystring2obj(location.search);
     return (
-      <A10Form action={VirtualServerForm.url} primaryId={params.name} method="post" horizontal
+      <A10Form action={VirtualServerForm.url} primaryId={params.name} horizontal
         onSuccess={this.props.onSuccess}
         onError={this.props.onError}
         schema="slb-virtual-server">

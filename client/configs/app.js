@@ -1,5 +1,5 @@
 import { auth } from '../middlewares/routes';
-import { VCS } from '../middlewares/widgets';
+// import { VCS } from '../middlewares/widgets';
 // import { moduletest } from '../middlewares/modules';
 // import { partitionCheck } from '../middlewares/pages';
 
@@ -20,7 +20,7 @@ var APP_CONFIGS =  {
     // partitionCheck
   ],
   WIDGET_MIDDLEWARE: [
-    VCS
+    // VCS
   ],
   ROUTE_MIDDLEWARE: [
     auth
