@@ -7,7 +7,7 @@ const StandardPageLayout = require('oem/' + OEM + '/PageLayout').default;
 //
 // import PageBase from 'helpers/PageBase';
 // import pageWrapper from 'helpers/pageWrapper';
-import { widgetWrapper } from 'a10-widget';
+import { widgetWrapper } from '@a10/a10-widget';
 
 class VirtualServerListPage extends React.Component {
 

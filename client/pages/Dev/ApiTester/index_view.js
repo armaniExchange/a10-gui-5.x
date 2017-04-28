@@ -3,7 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 
 import ApiTesterForm from './components/Form';
 // import PageBase from 'helpers/PageBase';
-// import { widgetWrapper } from 'a10-widget';
+// import { widgetWrapper } from '@a10/a10-widget';
 
 export default class ApiTester extends React.Component {
   render() {

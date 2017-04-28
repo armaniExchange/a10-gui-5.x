@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 import VirtualServerForm from 'pages/ADC/VirtualServer/components/VirtualServerForm';
 // import slbVirtualServerSchema from 'slb-virtual-server.json';
-// import { Schema } from 'a10-widget-lib';
+// import { Schema } from '@a10/a10-widget-lib';
 
-import { A10Table, A10TableColumn } from 'a10-widget';
+import { A10Table, A10TableColumn } from '@a10/a10-widget';
 
 class VirtualServerTable extends React.Component {
 

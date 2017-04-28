@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Popover, OverlayTrigger } from 'react-bootstrap';
 
-import { widgetWrapper } from 'a10-widget';
+import { widgetWrapper } from '@a10/a10-widget';
 import OKurl from './assets/licensed/img/ok.png';
 import './assets/licensed/sass/index.scss';
 

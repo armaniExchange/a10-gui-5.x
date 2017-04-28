@@ -9,7 +9,7 @@ import 'react-json-inspector/json-inspector.css';
 
 import auth from 'helpers/auth';
 // import { widgetWrapper } from 'helpers/widgetWrapper';
-import { A10Field, A10Form, A10JSONEditor, widgetWrapper } from 'a10-widget';
+import { A10Field, A10Form, A10JSONEditor, widgetWrapper } from '@a10/a10-widget';
 
 // import A10Field from 'components/Field';
 // import A10Form from 'components/Form/A10Form';

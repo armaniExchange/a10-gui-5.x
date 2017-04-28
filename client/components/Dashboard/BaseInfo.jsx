@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { widgetWrapper } from 'a10-widget';
+import { widgetWrapper } from '@a10/a10-widget';
 import './assets/baseinfo/sass/index.scss';
 
 class BaseInfo extends Component {

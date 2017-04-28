@@ -8,7 +8,7 @@ import WizardForm from './components/WizardForm';
 // import PageBase from 'helpers/PageBase';
 // import pageWrapper from 'helpers/pageWrapper';
 
-import { widgetWrapper } from 'a10-widget';
+import { widgetWrapper } from '@a10/a10-widget';
 
 class SSLiWizard extends React.Component {
 

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Col, Row, Panel } from 'react-bootstrap';
 
-import { A10Form, A10Field, A10SubmitButtons, A10FormControl, A10Checkbox } from 'a10-widget';
+import { A10Form, A10Field, A10SubmitButtons, A10FormControl, A10Checkbox } from '@a10/a10-widget';
 
 class VirtualPort extends React.Component {
 

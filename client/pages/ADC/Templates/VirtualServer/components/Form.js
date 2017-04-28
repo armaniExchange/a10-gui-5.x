@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Col, Row, Panel } from 'react-bootstrap';
 
-import { A10Field, A10Form, A10FormControl, A10Checkbox, A10SubmitButtons, A10Radio } from 'a10-widget';
+import { A10Field, A10Form, A10FormControl, A10Checkbox, A10SubmitButtons, A10Radio } from '@a10/a10-widget';
 
 class TemplateVirtualServerForm extends Component {
 

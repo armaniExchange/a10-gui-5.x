@@ -7,7 +7,7 @@ import { chart1, chart2 } from '../Resource/charts';
 import configApp from 'configs/app';
 const OEM = configApp.OEM;
 const StandardPageLayout = require('oem/' + OEM + '/PageLayout').default;
-import { widgetWrapper } from 'a10-widget';
+import { widgetWrapper } from '@a10/a10-widget';
 
 import { Table } from 'react-bootstrap';
 

@@ -4,9 +4,9 @@ import { cloneDeep } from 'lodash';
 import VirtualServerForm from 'pages/ADC/VirtualServer/components/VirtualServerForm';
 import slbVirtualServerSchema from 'slb-virtual-server.json';
 // import { widgetWrapper } from 'helpers/widgetWrapper';
-import { Schema } from 'a10-widget-lib';
+import { Schema } from '@a10/a10-widget-lib';
 
-import { A10Button, A10Table, A10TableColumn, widgetWrapper } from 'a10-widget';
+import { A10Button, A10Table, A10TableColumn, widgetWrapper } from '@a10/a10-widget';
 
 class VirtualServiceTable extends React.Component {
   static displayName = 'VirtualServiceTable'

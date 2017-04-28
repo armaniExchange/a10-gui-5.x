@@ -5,7 +5,7 @@ import auth from 'helpers/auth';
 import { Redirect } from 'react-router-dom';
 // import PageBase from 'helpers/PageBase';
 
-// import { widgetWrapper } from 'a10-widget';
+// import { widgetWrapper } from '@a10/a10-widget';
 
 class Logout extends React.Component {
   static propTypes = {

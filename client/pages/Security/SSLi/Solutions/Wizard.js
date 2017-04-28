@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { widgetWrapper } from 'a10-widget';
+import { widgetWrapper } from '@a10/a10-widget';
 
 import { Nav, NavItem } from 'react-bootstrap';
 

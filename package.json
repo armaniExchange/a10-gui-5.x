@@ -1,5 +1,5 @@
 {
-  "name": "a10-gui-5x",
+  "name": "@a10/a10-gui-5x",
   "version": "0.0.1",
   "private": true,
   "description": "A10 GUI",
@@ -122,9 +122,8 @@
     "webpack-node-externals": "^1.5.4"
   },
   "dependencies": {
-    "a10-schemas": "https://github.com/armaniExchange/a10-schemas.git",
-    "a10-widget": "git+https://github.com/armaniExchange/a10-widget.git",
-    "a10-widget-lib": "git+https://github.com/armaniExchange/a10-widget-lib.git",
+    "@a10/a10-widget": "0.0.1",
+    "@a10/a10-widget-lib": "0.0.1",
     "babel-plugin-react-transform": "^2.0.2",
     "compression": "^1.6.2",
     "concurrent": "^0.3.2",

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import configApp from 'configs/app';
 const OEM = configApp.OEM;
 const StandardPageLayout = require('oem/' + OEM + '/PageLayout').default;
-import { widgetWrapper } from 'a10-widget';
+import { widgetWrapper } from '@a10/a10-widget';
 
 class ReportSolution extends Component {
 

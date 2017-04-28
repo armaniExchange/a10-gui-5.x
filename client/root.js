@@ -4,13 +4,13 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { Map } from 'immutable';
 
-import { A10App } from 'a10-widget';
+import { A10App } from '@a10/a10-widget';
 import { setNotification, setGlobalVar } from './redux/modules/app/actions/index';
 import reducer from './redux/modules/reducer';
 import Config from './configs/app';
 import { PageNotFound } from './pages/StatusPage';
 import A10Modules from './pages';
-import '../../a10-widget/dist/style.css';
+import '@a10/a10-widget/dist/style.css';
 
 const OEM = Config.OEM;
 const AppLayout = require('./oem/' + OEM + '/AppLayout').default;

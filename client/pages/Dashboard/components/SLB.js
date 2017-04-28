@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 // import Link from 'react-router/Link';
 
 import { Widgets, getWidget } from '../../../components/Dashboard';
-import { DDGridView, GridView } from 'a10-widget';
+import { DDGridView, GridView } from '@a10/a10-widget';
 
 import './assets/sass/layout.scss';
 

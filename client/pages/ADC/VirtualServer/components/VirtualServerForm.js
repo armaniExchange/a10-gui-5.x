@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { Col, Row, Panel } from 'react-bootstrap';
 
 import { A10Form, A10Field, A10MultiField, A10DynamicSelect,
-         A10FormControl, A10Radio, A10Checkbox, A10SubmitButtons, querystring2obj } from 'a10-widget';
-import { required } from 'a10-widget-lib';
+         A10FormControl, A10Radio, A10Checkbox, A10SubmitButtons, querystring2obj } from '@a10/a10-widget';
+import { required } from '@a10/a10-widget-lib';
 // import { isInt } from 'helpers/validations';
 
 import VirtualPortForm from 'pages/ADC/VirtualPort/components/Form';

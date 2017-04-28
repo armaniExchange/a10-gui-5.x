@@ -2,7 +2,7 @@ import React from 'react';
 // import { Col, Row, Panel, Radio, Checkbox, FormControl } from 'react-bootstrap';
 // import { A10SubmitButtons } from 'components/Form/A10SubmitButtons';
 
-import {  widgetWrapper } from 'a10-widget'; //A10Field, A10MultiField, A10Form,
+import {  widgetWrapper } from '@a10/a10-widget'; //A10Field, A10MultiField, A10Form,
 
 // const makeError = (status=true, errMsg='') => ( status ? '' : errMsg );
 

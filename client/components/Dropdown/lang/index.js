@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { DropdownButton, MenuItem } from 'react-bootstrap';
 
-import { widgetWrapper } from 'a10-widget';
+import { widgetWrapper } from '@a10/a10-widget';
 import './assets/sass/index.scss';
 
 class LangDropdown extends Component {

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import { A10Field, A10Form, A10FormControl } from 'a10-widget';
-import { required } from 'a10-widget-lib';
+import { A10Field, A10Form, A10FormControl } from '@a10/a10-widget';
+import { required } from '@a10/a10-widget-lib';
 
 class LoginForm extends React.Component {
 

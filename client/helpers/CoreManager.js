@@ -5,12 +5,12 @@ import { mapValues } from 'lodash';
 // import { reduxForm } from 'redux-form/immutable'; // imported Field
 import { Redirect } from 'react-router-dom';
 import appActions from '../redux/modules/app/index';
-import { actions } from 'a10-widget';
+import { actions } from '@a10/a10-widget';
 
 // import { getAxapiResponse, getPageVar, getAxapiUid } from 'helpers/stateHelper';
 // import PageLayout from 'oem/PageLayout';
 // import { LAST_PAGE_KEY } from 'configs/appKeys';
-import { buildInstancePath, getWidgetManager, widgetWrapper } from 'a10-widget';
+import { buildInstancePath, getWidgetManager, widgetWrapper } from '@a10/a10-widget';
 // import ComponentManager from 'helpers/ComponentManager';
 // import A10Modal from 'components/Modal';
 import { REDIRECT_ROUTE } from 'configs/messages'; // eslint-disable-line
